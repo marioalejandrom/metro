@@ -11,9 +11,11 @@ class ModelTests(TestCase):
         email as username successfully"""
         email = 'test@test.net'
         password = 'test1234'
+        username = 'testUser'
         user = User.objects.create_user(
             email=email,
-            password=password
+            password=password,
+            username=username
         )
         self.assertEqual(user.email, email)
         self.assertTrue(user.check_password(password))
