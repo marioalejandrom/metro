@@ -116,7 +116,6 @@ class PrivateUserAPITests(TestCase):
     def test_retrieve_profile_successful(self):
         """Test retrieving the profile for a logged user"""
         response = self.client.get(PROFILE_URL)
-        print(response.data)
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(response.data, {
             'first_name': self.user.first_name,
